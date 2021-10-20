@@ -3,6 +3,8 @@ from .models import Todo
 from .forms import TodoAddForm, TodoUpdatedForm
 
 # Create your views here.
+
+
 def home(request):
     return render(request, "todo/home.html")
 
@@ -14,7 +16,6 @@ def todo_list(request):
         'todos': todos
     }
     return render(request, "todo/list.html", context)
-
 
 
 def todo_add(request):
@@ -44,15 +45,23 @@ def todo_update(request, id):
             return redirect("list")
 
     context = {
-        'form' : form,
+        'form': form,
     }
 
     return render(request, "todo/updated.html", context)
 
 
+def todo_delete(request, id):
+    # todo = Todo.objects.get(id=id)
+    todo = get_object_or_404(Todo, id=id)
 
-# def todo_delete(request, id):
-#     todo = Todo.objects.get(id=id)
 
-#     if request.method == 'POST':
-        
+    if request.method == 'POST':
+        todo.delete()
+        return redirect("list")
+
+    context = {
+        'todo': todo,
+    }
+
+    return render(request, "todo/delete.html", context)

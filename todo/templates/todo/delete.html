@@ -11,7 +11,8 @@
 
         {% csrf_token %}
 
-        {{form|crispy}}
+        <label for="" class="alert alert-danger">Are you sure delete this?</label>
+        
         <br>
         <button type="submit" class="btn btn-primary d-block btn-block">ADD</button>
     </form>
