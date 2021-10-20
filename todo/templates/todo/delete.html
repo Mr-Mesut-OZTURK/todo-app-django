@@ -4,18 +4,27 @@
 
 {% block content %}
 
-<div class="container bg-dark py-3 px-3 my-5">
-    <h2 class="alert alert-primary text-center my-5">ADD TODO LIST</h2>
-
-    <form action="" method="post">
-
-        {% csrf_token %}
-
-        <label for="" class="alert alert-danger">Are you sure delete this?</label>
+<div class="container py-3">
+   <div class="card bg-dark my-5 p-2">
+    
+    <div class="card-header m-0 p-0">
+        <h2 class="alert alert-primary text-center">DEL FROM TODO LIST</h2>
+    </div>
+  
+    <div class="card-body alert alert-danger ">
+        <form action="" method="post">
+            {% csrf_token %}
         
-        <br>
-        <button type="submit" class="btn btn-primary d-block btn-block">ADD</button>
-    </form>
+            <h3 class="d-block text-center mb-4">
+                Are you sure delete this?
+            </h3>
+
+            <input type="submit" class="btn btn-danger w-100" value="DELETE">
+            
+        </form>
+    </div>
+
+   </div>
 </div>
 
 {% endblock content %}

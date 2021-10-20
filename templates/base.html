@@ -17,48 +17,53 @@
 
     <title>Todo_App</title>
 
+    <style>
+        .parallax_1 {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- Nav tabs -->
-    <nav class="navbar bg-primary navbar-light navbar-expand-md sticky-top">
+    <nav class="navbar bg-dark navbar-dark navbar-expand-md sticky-top">
         <div class="container">
-            
-            <a href="" class="navbar-brand">MESUT</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="{% url 'home' %}" class="navbar-brand">MESUT</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-lg-0">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">List</a>
+                        <a href="{% url 'list' %}" class="nav-link">List</a>
                     </li>
                 </ul>
             </div>
 
         </div>
-
-
-        
     </nav>
 
-
-    <script>
-        $('#navId a').click(e => {
-            e.preventDefault();
-            $(this).tab('show');
-        });
-    </script>
-
-    <div class="container">
+    <div class="container-fluid m-0 p-0 parallax_1" style="min-height:80vh;background-image: url(https://picsum.photos/1000/800);">
         {% block content %}
 
 
         {% endblock content %}
     </div>
+
+    <footer class="footer bg-dark text-warning d-flex justify-content-center align-items-center" style="min-height:20vh;">
+        <p>Tüm hakları saklıdır</p>
+    </footer>
+
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
@@ -67,6 +72,12 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
 
+    <script>
+        $('#navId a').click(e => {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    </script>
 
 </body>
 

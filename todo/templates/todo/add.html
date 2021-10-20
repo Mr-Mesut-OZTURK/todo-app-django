@@ -4,17 +4,24 @@
 
 {% block content %}
 
-<div class="container bg-dark py-3 px-3 my-5">
-    <h2 class="alert alert-primary text-center my-5">ADD TODO LIST</h2>
+<div class="container py-5">
+    <div class="card my-5">
 
-    <form action="" method="post">
+        <div class="card-header mt-3">
+            <h2 class="alert alert-primary text-center">ADD TODO LIST</h2>
+        </div>
 
-        {% csrf_token %}
+        <div class="card-body px-3">
+            <form action="" method="post">
+                {% csrf_token %}
 
-        {{form|crispy}}
-        <br>
-        <button type="submit" class="btn btn-primary d-block btn-block">ADD</button>
-    </form>
+                {{form|crispy}}
+                <button type="submit" class="btn btn-primary w-100 my-3">ADD</button>
+           
+            </form>
+        </div>
+
+    </div>
 </div>
 
 {% endblock content %}
