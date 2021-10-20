@@ -11,7 +11,7 @@ def home(request):
 
 def todo_list(request):
     todos = Todo.objects.all()
-
+    print(todos)
     context = {
         'todos': todos
     }
