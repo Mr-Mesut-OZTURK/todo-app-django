@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Clarusway Todo list</h1>
+
+{% for todo in todos%}
+<h3>{{todo}}</h3>
+{% endfor %}
+
+{% endblock content %}
