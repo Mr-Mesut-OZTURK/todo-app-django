@@ -65,3 +65,8 @@ def todo_delete(request, id):
     }
 
     return render(request, "todo/delete.html", context)
+
+
+
+def not_found(request):
+    return render(request, "todo/404.html")
